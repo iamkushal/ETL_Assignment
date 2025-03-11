@@ -97,3 +97,6 @@ The code is designed to be simple, reliable, and easy to debug.
 It uses caching and retries to handle errors and improve performance.
 
 The pipeline is modular, so each part (fetching, transforming, loading) is separate and easy to update.
+
+
+## You can find the result screenshots on Results_Images folder
