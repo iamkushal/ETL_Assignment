@@ -64,11 +64,17 @@ The etl.py script is the core of the pipeline, fetching data, processing it, and
 - Build the Docker Image
 Run the following command to build the Docker image for the Python script:
 
-```docker-compose build```
+```
+docker-compose build
+```
+
 - Start the Containers
 Start all services (MySQL, Elasticsearch, and the Python script) using Docker Compose:
 
-```docker-compose up```
+```
+docker-compose up
+```
+
 The ETL pipeline (etl.py) will automatically start executing.
 
 - Pipeline Workflow
