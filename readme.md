@@ -73,7 +73,29 @@ The output folder might store final results or logs.
 
 The etl.py script is the core of the pipeline, fetching data, processing it, and loading it into MySQL and Elasticsearch.
 
-## 4. Assumptions
+## 4. Running the Pipeline
+- Build the Docker Image
+Run the following command to build the Docker image for the Python script:
+
+    a. docker-compose build
+- Start the Containers
+Start all services (MySQL, Elasticsearch, and the Python script) using Docker Compose:
+
+    b. docker-compose up
+The ETL pipeline (etl.py) will automatically start executing.
+
+- Pipeline Workflow
+Fetch Metadata: Fetches metadata for SARS-CoV-2 samples from NCBI.
+
+Fetch FASTA Sequences: Retrieves FASTA sequences for the fetched metadata.
+
+Deduplicate Data: Removes duplicate records.
+
+Load to MySQL: Stores the data in a MySQL database.
+
+Load to Elasticsearch: Indexes the data in Elasticsearch.
+
+## 5. Assumptions
 The NCBI API allows multiple requests in a short time.
 
 The dataset isn’t too large (less than 1000 records).
@@ -82,7 +104,7 @@ Errors (e.g., network issues) are temporary and can be fixed by retrying.
 
 Caching data locally is okay.
 
-## 5. Possible Improvements
+## 6. Possible Improvements
 Parallel Processing: Fetch data in parallel to speed things up.
 
 Pagination: Handle larger datasets by fetching data in chunks.
@@ -91,7 +113,7 @@ Better Error Handling: Add more specific error messages for different types of f
 
 Configuration File: Move settings (e.g., API URLs, database credentials) to a separate file for easier management.
 
-## 6. Thought Process Summary
+## 7. Thought Process Summary
 The code is designed to be simple, reliable, and easy to debug.
 
 It uses caching and retries to handle errors and improve performance.
@@ -99,4 +121,4 @@ It uses caching and retries to handle errors and improve performance.
 The pipeline is modular, so each part (fetching, transforming, loading) is separate and easy to update.
 
 
-## You can find the result screenshots on Results_Images folder
+## You can find the result screenshots on Results_Images f
