@@ -13,7 +13,11 @@ services:
       timeout: 5s
       retries: 5
     restart: unless-stopped
-    attach: false
+    attach: true
+
+    #localhost 3306
+    #username: root
+    #password: password
 
   elasticsearch:
     image: docker.elastic.co/elasticsearch/elasticsearch:7.17.0

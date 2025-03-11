@@ -57,7 +57,7 @@ Loads data into MySQL.
 
 Loads data into Elasticsearch.
 
-*Caching Mechanism*
+### Caching Mechanism
 To avoid redundant API requests, data is cached:
 
 Metadata stored in: cache/metadata/
