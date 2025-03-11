@@ -1,0 +1,13 @@
+cache
+node_modules
+volumes
+fasta_files
+.venv
+.vscode
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+*.pyw
+*.pyz
+*.pywz

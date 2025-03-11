@@ -1,0 +1,14 @@
+{
+  "scripts": {
+    "start": "node interview.ts"
+  },
+  "type": "module",
+  "dependencies": {
+    "@elastic/elasticsearch": "^8.17.1",
+    "@types/node": "^22.13.10",
+    "got": "^14.4.6",
+    "mysql2": "^3.13.0",
+    "p-limit": "^6.2.0",
+    "winston": "^3.17.0"
+  }
+}
