@@ -1,4 +1,4 @@
-# ETL
+# ETL Pipeline to fetch NCBI neucleotide database
 This code is an ETL (Extract, Transform, Load) pipeline that fetches genomic data from the NCBI (National Center for Biotechnology Information) API, processes it, and stores it in MySQL and Elasticsearch. Here's a simpler breakdown of how it works:
 
 ## 1. What Does the Code Do?
@@ -44,19 +44,6 @@ Indexes metadata and FASTA sequences in Elasticsearch for fast searching.
 
 Creates an index called ncbi_records if it doesn’t already exist.
 
-- Main Function
-Runs the entire pipeline:
-
-Fetches metadata.
-
-Removes duplicates.
-
-Fetches FASTA sequences.
-
-Loads data into MySQL.
-
-Loads data into Elasticsearch.
-
 ### Caching Mechanism
 To avoid redundant API requests, data is cached:
 
@@ -77,11 +64,11 @@ The etl.py script is the core of the pipeline, fetching data, processing it, and
 - Build the Docker Image
 Run the following command to build the Docker image for the Python script:
 
-    a. docker-compose build
+```docker-compose build```
 - Start the Containers
 Start all services (MySQL, Elasticsearch, and the Python script) using Docker Compose:
 
-    b. docker-compose up
+```docker-compose up```
 The ETL pipeline (etl.py) will automatically start executing.
 
 - Pipeline Workflow
